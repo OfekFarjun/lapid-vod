@@ -1,0 +1,13 @@
+services:
+  vod-db:
+    image: "mongo:7.0.5-jammy"
+    container_name: vod-db
+    restart: always
+    ports:
+      - 27017:27017
+  vod-storage:
+    image: "scireum/s3-ninja:8.3.2"
+    container_name: vod-storage
+    restart: always
+    ports:
+      - 9444:9000
